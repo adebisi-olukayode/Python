@@ -2,9 +2,10 @@ import cfg
 import requests
 import base64
 import json
+import getpass
 
-login = cfg.userv
-password = cfg.passv
+login = input("Please enter your Veeam username: ")
+password = getpass.getpass("Veeam_password: ")
 url = cfg.api
 user_password = login + ':' + password
 encoded = (base64.b64encode(user_password.encode("ascii")).decode("ascii"))
